@@ -3,5 +3,6 @@
 
 
     <string name="my_places">My places</string>
-    <string name="add_place">Add a place</string>
+    <string name="add_place">Add place</string>
+    <string name="empty_state">Any places yet! Click on the Add place button :)</string>
 </resources>

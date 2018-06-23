@@ -1,4 +1,4 @@
-package com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.adapter;
+package com.example.danielacruztirado.vanhackapp.feature.favoriteplaces.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -36,10 +36,10 @@ public class FavoritePlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
         PlaceViewHolder placeViewHolder = (PlaceViewHolder) holder;
 
         if(place != null){
-            placeViewHolder.nameText.setText(place.getName());
-            placeViewHolder.addressText.setText(place.getAddress());
-            placeViewHolder.phoneText.setText(place.getPhone());
-            placeViewHolder.webText.setText(place.getWeb());
+            placeViewHolder.nameText.setText("Name: " + place.getName());
+            placeViewHolder.addressText.setText("Address: " + place.getAddress());
+            placeViewHolder.phoneText.setText("Phone: " + place.getPhone());
+            placeViewHolder.webText.setText("Web: " + place.getWeb());
         }
     }
 

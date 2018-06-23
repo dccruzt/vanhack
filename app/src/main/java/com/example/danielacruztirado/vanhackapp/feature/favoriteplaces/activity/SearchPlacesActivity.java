@@ -9,7 +9,9 @@ import com.example.danielacruztirado.vanhackapp.R;
 import com.example.danielacruztirado.vanhackapp.favoriteplaces.data.FavoritePlace;
 import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.callback.IDatabaseWrite;
 import com.example.danielacruztirado.vanhackapp.feature.base.BaseFragmentActivity;
+import com.example.danielacruztirado.vanhackapp.feature.favoriteplaces.callback.IConnectionListener;
 import com.example.danielacruztirado.vanhackapp.init.VanhackDatabase;
+import com.example.danielacruztirado.vanhackapp.init.VanhackPlacesAPI;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
@@ -35,12 +37,12 @@ public class SearchPlacesActivity extends BaseFragmentActivity implements PlaceS
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*VanhackPlacesAPI.getInstance(this).init(this, new IConnectionListener() {
+        VanhackPlacesAPI.getInstance(this).init(this, new IConnectionListener() {
             @Override
             public void onError(String message) {
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
 
     @Override

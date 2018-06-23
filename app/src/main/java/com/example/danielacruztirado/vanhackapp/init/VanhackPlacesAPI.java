@@ -18,10 +18,6 @@ public class VanhackPlacesAPI {
     private GoogleApiClient mGoogleApiClient;
     private static Context mContext;
 
-    private GeoDataClient mGeoDataClient;
-    private PlaceDetectionClient mPlaceDetectionClient;
-    private String mFusedLocationProviderClient;
-
     public static VanhackPlacesAPI getInstance(Context context){
         if(instance == null){
             mContext = context;
@@ -32,10 +28,6 @@ public class VanhackPlacesAPI {
     }
 
     public void init(FragmentActivity fragmentActivity, final IConnectionListener callback){
-
-        /*mGeoDataClient = Places.getGeoDataClient(mContext);
-        mPlaceDetectionClient = Places.getPlaceDetectionClient(mContext);
-        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);*/
 
         mGoogleApiClient = new GoogleApiClient
                 .Builder(mContext)
