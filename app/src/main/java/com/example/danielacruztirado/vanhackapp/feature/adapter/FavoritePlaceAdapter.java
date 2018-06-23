@@ -16,11 +16,9 @@ import java.util.List;
 
 public class FavoritePlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-    private Context context;
     private List<FavoritePlace> places;
 
-    public FavoritePlaceAdapter(Context context, List<FavoritePlace> places){
-        this.context = context;
+    public FavoritePlaceAdapter(List<FavoritePlace> places){
         this.places = places;
     }
 
@@ -48,7 +46,12 @@ public class FavoritePlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return places.size();
+    }
+
+    public void updateAdapter(List<FavoritePlace> myPlaces) {
+        this.places = myPlaces;
+        notifyDataSetChanged();
     }
 
     public class PlaceViewHolder extends RecyclerView.ViewHolder{

@@ -2,7 +2,9 @@ package com.example.danielacruztirado.vanhackapp.feature;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -40,11 +42,12 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void initViews() {
-        addPlaceButton = (Button) this.findViewById(R.id.button_add_places);
-        placesList = (RecyclerView) this.findViewById(R.id.list_places);
+        addPlaceButton = (Button) findViewById(R.id.button_add_places);
+        placesList = (RecyclerView) findViewById(R.id.list_places);
 
         places = new ArrayList<>();
-        adapter = new FavoritePlaceAdapter(this, places);
+        adapter = new FavoritePlaceAdapter(places);
+        placesList.setLayoutManager(new LinearLayoutManager(this));
         placesList.setAdapter(adapter);
     }
 
@@ -54,8 +57,9 @@ public class MainActivity extends BaseActivity{
 
             @Override
             public void onReadObject(List<FavoritePlace> favoritePlaces) {
+                Log.i("danielaTest", String.valueOf(favoritePlaces.size()));
                 places = favoritePlaces;
-                adapter.notifyDataSetChanged();
+                adapter.updateAdapter(places);
             }
 
             @Override
