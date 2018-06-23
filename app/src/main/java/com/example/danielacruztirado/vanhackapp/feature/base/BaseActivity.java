@@ -1,12 +1,9 @@
-package com.example.danielacruztirado.vanhackapp.init;
+package com.example.danielacruztirado.vanhackapp.feature.base;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-
-import com.example.danielacruztirado.vanhackapp.R;
-import com.google.firebase.FirebaseApp;
 
 public abstract class BaseActivity extends AppCompatActivity{
 

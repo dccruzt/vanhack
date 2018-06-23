@@ -1,26 +1,28 @@
-package com.example.danielacruztirado.vanhackapp.feature;
+package com.example.danielacruztirado.vanhackapp.feature.favoriteplaces.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.danielacruztirado.vanhackapp.R;
-import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseRead;
-import com.example.danielacruztirado.vanhackapp.data.FavoritePlace;
-import com.example.danielacruztirado.vanhackapp.feature.adapter.FavoritePlaceAdapter;
-import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseWrite;
-import com.example.danielacruztirado.vanhackapp.init.BaseActivity;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.callback.IDatabaseRead;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.data.FavoritePlace;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.adapter.FavoritePlaceAdapter;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.callback.IDatabaseWrite;
+import com.example.danielacruztirado.vanhackapp.feature.base.BaseActivity;
 import com.example.danielacruztirado.vanhackapp.init.VanhackDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class MainActivity extends BaseActivity{
+public class ListPlacesActivity extends BaseActivity {
 
     private Button addPlaceButton;
     private RecyclerView placesList;
@@ -47,8 +49,26 @@ public class MainActivity extends BaseActivity{
 
         places = new ArrayList<>();
         adapter = new FavoritePlaceAdapter(places);
-        placesList.setLayoutManager(new LinearLayoutManager(this));
-        placesList.setAdapter(adapter);
+
+        if(placesList != null){
+            placesList.setLayoutManager(new LinearLayoutManager(this));
+            placesList.setAdapter(adapter);
+        }
+
+        if(addPlaceButton != null){
+            addPlaceButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMap();
+                }
+            });
+        }
+    }
+
+    private void openMap(){
+
+        Intent intent = new Intent(this, SearchPlacesActivity.class);
+        startActivity(intent);
     }
 
     private void readPlacesOnDatabase(){

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseRead;
-import com.example.danielacruztirado.vanhackapp.data.FavoritePlace;
-import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseWrite;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.callback.IDatabaseRead;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.data.FavoritePlace;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.callback.IDatabaseWrite;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +17,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class VanhackDatabase {

@@ -1,4 +1,4 @@
-package com.example.danielacruztirado.vanhackapp.data;
+package com.example.danielacruztirado.vanhackapp.favoriteplaces.data;
 
 public class FavoritePlace {
 

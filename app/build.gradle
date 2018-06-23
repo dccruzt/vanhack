@@ -30,6 +30,7 @@ dependencies {
     //Realtime database
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

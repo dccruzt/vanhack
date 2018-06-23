@@ -1,6 +1,5 @@
-package com.example.danielacruztirado.vanhackapp.feature.adapter;
+package com.example.danielacruztirado.vanhackapp.favoriteplaces.feature.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.danielacruztirado.vanhackapp.R;
-import com.example.danielacruztirado.vanhackapp.data.FavoritePlace;
+import com.example.danielacruztirado.vanhackapp.favoriteplaces.data.FavoritePlace;
 
 import java.util.List;
 
