@@ -1,11 +1,13 @@
 package com.example.danielacruztirado.vanhackapp.init;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseRead;
 import com.example.danielacruztirado.vanhackapp.data.FavoritePlace;
 import com.example.danielacruztirado.vanhackapp.feature.callback.IDatabaseWrite;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,8 +25,9 @@ public class VanhackDatabase {
     private static VanhackDatabase instance;
     private static FirebaseDatabase database;
 
-    public static VanhackDatabase getInstance(){
-        if(instance != null){
+    public static VanhackDatabase getInstance(Context context){
+        if(instance == null){
+            FirebaseApp.initializeApp(context);
             instance = new VanhackDatabase();
             database = FirebaseDatabase.getInstance();
             return instance;
@@ -38,7 +41,6 @@ public class VanhackDatabase {
         referenceDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
 
                 GenericTypeIndicator<HashMap<String, FavoritePlace>> objectsGTypeInd = new GenericTypeIndicator<HashMap<String, FavoritePlace>>() {};
                 Map<String, FavoritePlace> objectHashMap = dataSnapshot.getValue(objectsGTypeInd);

@@ -28,16 +28,20 @@ public class MainActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_places);
 
         readPlacesOnDatabase();
-        writePlaceOnDatabase();
+        //writePlaceOnDatabase();
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.activity_list_places;
     }
 
     @Override
     public void initViews() {
-        addPlaceButton = (Button) findViewById(R.id.button_add_places);
-        placesList = (RecyclerView) findViewById(R.id.list_places);
+        addPlaceButton = (Button) this.findViewById(R.id.button_add_places);
+        placesList = (RecyclerView) this.findViewById(R.id.list_places);
 
         places = new ArrayList<>();
         adapter = new FavoritePlaceAdapter(this, places);
@@ -46,11 +50,12 @@ public class MainActivity extends BaseActivity{
 
     private void readPlacesOnDatabase(){
 
-        VanhackDatabase.getInstance().queryToRead("places", new IDatabaseRead() {
+        VanhackDatabase.getInstance(this).queryToRead("places", new IDatabaseRead() {
 
             @Override
             public void onReadObject(List<FavoritePlace> favoritePlaces) {
                 places = favoritePlaces;
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -68,10 +73,9 @@ public class MainActivity extends BaseActivity{
         place.setPhone("my vanhack phone");
         place.setWeb("my vanhack web");
 
-        VanhackDatabase.getInstance().queryToWrite("places", place, new IDatabaseWrite() {
+        VanhackDatabase.getInstance(this).queryToWrite("places", place, new IDatabaseWrite() {
             @Override
             public void onWriteObject(FavoritePlace favoritePlace) {
-                adapter.notifyDataSetChanged();
             }
 
             @Override

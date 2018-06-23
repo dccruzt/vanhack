@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "412847215348",
+    "firebase_url": "https://vanhack-ed6e4.firebaseio.com",
+    "project_id": "vanhack-ed6e4",
+    "storage_bucket": "vanhack-ed6e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412847215348:android:65b3b623ae79e40a",
+        "android_client_info": {
+          "package_name": "com.example.danielacruztirado.vanhackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412847215348-obhogb0tgg0mg0gbjtfg587ifnpfg1bc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.danielacruztirado.vanhackapp",
+            "certificate_hash": "f5dcc78bb0d142b72bb4c0323db1211b9062a808"
+          }
+        },
+        {
+          "client_id": "412847215348-1810fsnccf7jfiugkapvr88bt7b4q586.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZiPN-dXKjOEOCVmBMkai_FvjOdy9HkpI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412847215348-1810fsnccf7jfiugkapvr88bt7b4q586.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
