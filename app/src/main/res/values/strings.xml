@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">vanhackApp</string>
+
+
+    <string name="my_places">My places</string>
+    <string name="add_place">Add a place</string>
 </resources>
